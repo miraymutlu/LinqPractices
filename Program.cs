@@ -26,6 +26,18 @@ class Program
         student = _context.Students.Where(student => student.Surname == "Ataç").SingleOrDefault();
         Console.WriteLine($"Student 1: {student.Name}\n");
 
+        //ToList()
+        Console.WriteLine("*** To List ***");
+        var studentList = _context.Students.Where(student => student.ClassId == 2).ToList();
+        Console.WriteLine($"Student Count: {studentList.Count}");
+        
+        //OrderBy()
+        Console.WriteLine("*** Order By ***");
+        students = _context.Students.OrderBy(students => students.StudentId).ToList();
+        foreach (var st in students)
+        {
+            Console.WriteLine("List of the students: \n" + $"{st.StudentId} - {st.Name} {st.Surname}");
+        }
 
     }
 }
