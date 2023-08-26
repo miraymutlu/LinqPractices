@@ -33,11 +33,20 @@ class Program
         
         //OrderBy()
         Console.WriteLine("*** Order By ***");
+        Console.WriteLine("List Of The Students:");
         students = _context.Students.OrderBy(students => students.StudentId).ToList();
         foreach (var st in students)
         {
-            Console.WriteLine("List of the students: \n" + $"{st.StudentId} - {st.Name} {st.Surname}");
+            Console.WriteLine($"{st.StudentId} - {st.Name} {st.Surname}");
         }
 
+        //OrderByDescending()
+        Console.WriteLine("*** Order By Descending***");
+        Console.WriteLine("List Of The Students:");
+        students = _context.Students.OrderByDescending(students => students.StudentId).ToList();
+        foreach (var st in students)
+        {
+            Console.WriteLine($"{st.StudentId} - {st.Name} {st.Surname}");
+        }
     }
 }
