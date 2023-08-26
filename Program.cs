@@ -41,12 +41,26 @@ class Program
         }
 
         //OrderByDescending()
-        Console.WriteLine("*** Order By Descending***");
+        Console.WriteLine("*** Order By Descending ***");
         Console.WriteLine("List Of The Students:");
         students = _context.Students.OrderByDescending(students => students.StudentId).ToList();
         foreach (var st in students)
         {
             Console.WriteLine($"{st.StudentId} - {st.Name} {st.Surname}");
+        }
+        
+        //Anonymous Object Result
+        Console.WriteLine("*** Anonymous Object Result ***");
+        var anonymousObject = _context.Students.Where(anonymousObject => anonymousObject.ClassId == 2).Select(
+            anonymousObject => new
+            {
+                Id = anonymousObject.StudentId,
+                FullName = anonymousObject.Name + " " + anonymousObject.Surname
+            });
+
+        foreach (var obj in anonymousObject)
+        {
+            Console.WriteLine(obj.Id+" - "+obj.FullName);
         }
     }
 }
