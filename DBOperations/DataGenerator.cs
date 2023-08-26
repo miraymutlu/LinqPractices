@@ -16,28 +16,24 @@ public class DataGenerator
             context.Students.AddRange(
                 new Student()
                 {
-                    StudentId = 1,
                     Name = "Miray",
                     Surname = "Mutlu",
                     ClassId = 1
                 },
                 new Student()
                 {
-                    StudentId = 2,
                     Name = "Defne",
                     Surname = "Mutlu",
                     ClassId = 1
                 },
                 new Student()
                 {
-                    StudentId = 3,
                     Name = "Elif",
                     Surname = "Ataç",
                     ClassId = 2
                 },
                 new Student()
                 {
-                    StudentId = 4,
                     Name = "Zeynep",
                     Surname = "Köylü",
                     ClassId = 2
